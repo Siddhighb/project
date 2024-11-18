@@ -1,0 +1,142 @@
+# git question
+
+mkdir Helloproject
+cd Helloproject
+git init
+touch hello.txt/py
+git add hello.txt
+git status
+git config --user.email "email-id"
+git commit -m "any msg"
+git log
+
+# maven steps
+#Maven, a powerful build automation tool, simplifies the process of managing project dependencies. A dependency is a library or module that your project relies on. By effectively managing dependencies, you ensure that your project has access to the necessary components to function correctly.
+#The pom.xml file is the core configuration file for a Maven project. It contains information about the project, including its dependencies, build instructions, and other project-related settings
+#Maven's Build Automation
+Maven automates various build tasks, including:
+Compilation: Compiles source code into bytecode.
+Testing: Executes unit tests.
+Packaging: Creates distributable archives like JAR or WAR files.
+Deployment: Deploys the packaged artifacts to a repository.
+mvn clean: Cleans the target directory.
+mvn compile: Compiles the source code.
+mvn test: Runs the tests.   
+mvn package: Packages the project into a JAR or WAR file.
+
+go to spring initializer 
+select project-maven language-java springboot-3.3.4
+project metadata: group-com.example1
+artifact-demo1
+name-demo1
+description- ===
+package-===
+packaging- jar
+java-17
+dependencies- add spring web, spring data jpa(sql)
+click generate
+extract zip file open eclipse-file-import-maven-existing maven-browse-downloads-demo1-tick demo1-finish
+server-right click
+window-showview-others-server
+server-apache-Tomcatv10.0
+demo-src/main/java-DemoApplication.java-right click-run as-run on server
+public class Sum  
+{  
+public static void main(String args[])   
+{  
+int n1 = 225, n2 = 115, sum;  
+sum = n1 + n2;  
+System.out.println("The sum of numbers is: "+sum);  
+}  
+}  
+
+#Docker
+mkdir my-webpage //create project directory
+cd my-webpage //change current directory to new directory
+nano index.html //nano txt editor to create or edit html file
+touch Dockerfile //create
+ls //list files
+nano Dockerfile // write instructions for building your Docker image
+docker buid -t my-webpage-image //Builds a Docker image from the Dockerfile in the current directory and tags it as "my webpage-image"
+docker run -d -p 8080:80 --name my-webpage-container my-webpage-image  //Runs the Docker image as a container in detached mode (-d), maps port 80 of the container to port 8080 of your host machine (-p 8080:80), names the container "my-webpage-container" (--name my-webpage-container), and uses the image "my-webpage-image"
+curl http://localhost:8080 //Sends an HTTP GET request to your web application running on port 8080 of your local machine
+docker stop my-webpage-container //stops running container
+docker rm my-webpage-container //removes stopped container
+
+#git and GitHub create a simple project And push on remote server (like github ) using git. and perform
+some operation And displays a chronological history of commits.
+mkdir 
+cd
+echo "any msg" >README.md
+git init
+git add README.md
+git commit -m "any msg"
+git checkout -b main //creates main branch locally and pushes it to github
+git push -u origin main
+git remote add origin url_of_repo(from GitHub)
+touch hello.txt
+git add hello.txt
+git commit -m "any msg"
+git push (transfer file git to github)
+edit file and again write commands from git add...
+git log --oneline --reverse
+
+#github/bitbucket/gitlab new branch/repo merge branch history of commits Create a simple project, push it to a remote repository on GitHub, and create a new branch. Merge this branch into the main branch and display a chronological history of commits. 
+create new branch in GitHub
+mkdir
+cd
+echo "any msg" >README.md
+git init
+git add README.md
+git commit -m "any msg"
+git checkout -b main
+git push -u origin main
+git remote add origin url_of_main_branch
+git branch -M main (open main branch)
+git push -u origin main
+git checkout -b namenew-branch (switch to new branch)
+touch hello.txt
+git add hello.txt
+git commit -m "any msg"
+git push -u origin namenew-branch
+git checkout main
+git merge namenew branch
+git push
+git log --oneline --reverse  
+
+#git cmd to check status log history diff betn wd and last commit make commit display chro history of commit Create a simple project and use Git commands to check the status, view log history, see differences between the working directory and the last commit, make a commit and display a chronological history of commits. 
+mkdir SimpleProject
+cd SimpleProject
+git init
+echo "Simple Project" > README.md
+git add README.md
+git commit -m "Initial commit with README file"
+git status
+echo "This project demonstrates basic Git commands." >> README.md
+git diff   // Shows unstaged changes
+git add README.md
+git diff --staged   // Shows staged changes
+git commit -m "any msg"
+git log //detailed commit history
+git log --oneline --reverse //chron history
+
+#simple proj push to repo new branch merge branch display chron history  only if pull changes Create a simple project, push it to a remote repository on Bitbucket , and create a new branch. Merge this branch into the main branch and display a chronological history of commits.and Pull the changes on your local machine. 
+mkdir SimpleProject
+cd SimpleProject
+git init
+echo "Simple msg" > README.md
+git add README.md
+git commit -m "Initial commit with README file"
+git remote add origin url_of_gith/bit/GitLab //push to bit/gith
+git push -u origin main
+git checkout -b feature-update //new branch
+echo "This project demonstrates basic Git and Bitbucket operations." >> README.md
+git add README.md
+git commit -m "Add project description in README"
+git push -u origin feature-update
+git checkout main //switch branch
+git merge feature-update //merge branch
+git push origin main
+git log --oneline --reverse //chrono hist
+git pull origin main //pull changes on another machine
+
